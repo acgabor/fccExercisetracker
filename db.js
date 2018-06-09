@@ -39,7 +39,6 @@ var removeAboveExercise = function(userID,done) {
 var checkUserExistance = function(username,done){
   User.find({"username":username},function (err,data){
     if(err) done(err,false);
-    console.log(data)
     if (data.length>0){
       done(null,true);
     }else{
@@ -51,7 +50,6 @@ var checkUserExistance = function(username,done){
 var checkUserIDExistance = function(userId,done){
   User.find({"_id":userId},function (err,data){
     if(err) done(err,false);
-    console.log(data)
     if (data.length>0){
       done(null,data[0]['username']);
     }else{
